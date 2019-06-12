@@ -17,7 +17,9 @@ export default class App extends Component {
         places: prevState.places.concat({
           key: Math.random(),
           name: placeName,
-          image: placeImage
+          image: {
+            uri: "https://pbs.twimg.com/profile_images/1057930129190592513/mUJt9QdU_400x400.jpg"
+          }
         })
       };
     });
