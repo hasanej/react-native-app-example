@@ -5,6 +5,13 @@ export default StyleSheet.create({
     width: "100%",
     padding: 10,
     marginBottom: 5,
-    backgroundColor: "#eee"
+    backgroundColor: "#eee",
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  placeImage: {
+    marginRight: 8,
+    width: 45,
+    height: 45
   }
 });
