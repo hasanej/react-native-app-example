@@ -9,17 +9,15 @@ const placeDetail = props => {
   if (props.selectedPlace) {
     modalContent = (
       <View>
-        <Image
-          source={props.selectedPlace.image}
-          style={styles.placeImage}
-        />
-        <Text style={styles.modalTextContainer}>{props.selectedPlace.name}</Text>
+        <Image source={props.selectedPlace.image} style={styles.placeImage} />
+        <Text style={styles.placeName}>{props.selectedPlace.name}</Text>
       </View>
     );
   }
 
   return (
     <Modal
+      onRequestClose={props.onModalClosed}
       visible={props.selectedPlace != null}
       animationType="slide"
     >
@@ -27,10 +25,10 @@ const placeDetail = props => {
         {modalContent}
         <View>
           <View style={styles.buttonContainer}>
-            <Button title="Delete" color="red" />
+            <Button title="Delete" color="red" onPress={props.onItemDeleted} />
           </View>
           <View style={styles.buttonContainer}>
-            <Button title="Close" />
+            <Button title="Close" onPress={props.onModalClosed} />
           </View>
         </View>
       </View>
