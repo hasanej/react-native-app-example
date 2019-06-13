@@ -9,19 +9,29 @@ const placeDetail = props => {
   if (props.selectedPlace) {
     modalContent = (
       <View>
-        <Image source={props.selectedPlace.placeImage} />
-        <Text>{props.selectedPlace.placeName}</Text>
+        <Image
+          source={props.selectedPlace.image}
+          style={styles.placeImage}
+        />
+        <Text style={styles.modalTextContainer}>{props.selectedPlace.name}</Text>
       </View>
     );
   }
 
   return (
-    <Modal visible={props.selectedPlace != null}>
+    <Modal
+      visible={props.selectedPlace != null}
+      animationType="slide"
+    >
       <View style={styles.modalContainer}>
         {modalContent}
         <View>
-          <Button title="Delete" color="red" />
-          <Button title="Close" />
+          <View style={styles.buttonContainer}>
+            <Button title="Delete" color="red" />
+          </View>
+          <View style={styles.buttonContainer}>
+            <Button title="Close" />
+          </View>
         </View>
       </View>
     </Modal>
